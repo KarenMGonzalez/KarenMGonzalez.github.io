@@ -111,7 +111,7 @@ body {
   background-size: 50px 50px;
 }
 
-/* Ensure content sits above overlay */
+/* Nos aseguramos de que el contenido se sitúe por encima de la superposición.  */
 header,
 main,
 footer {
@@ -191,7 +191,7 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* Main content - each section gets its own full-width block */
+/* Contenido principal - cada sección tiene su propio bloque de ancho completo */
 main {
   display: flex;
   flex-direction: column;
@@ -211,7 +211,7 @@ section .section-content {
   width: 100%;
 }
 
-/* Alternate backgrounds for visual separation */
+/* Fondos alternativos para la separación visual  */
 #about {
   background: var(--bg-dark);
   padding-top: 5rem;
@@ -586,3 +586,75 @@ footer {
     position: relative; /* Para que se vea bien en el celular */
   }
 }
+
+/* ===== Arreglo visual para celular ===== */
+@media (max-width: 640px) {
+
+  /* HEADER */
+  header {
+    padding: 0.75rem 1rem;
+  }
+
+  header h1 {
+    font-size: 0.7rem;
+    line-height: 1.4;
+  }
+
+  nav ul {
+    gap: 0.75rem;
+  }
+
+  nav a {
+    font-size: 0.55rem;
+  }
+
+  .languages {
+    gap: 0.5rem;
+  }
+
+  .lang-button {
+    font-size: 1rem;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 3rem 1.25rem;
+  }
+
+  section h2 {
+    font-size: 0.75rem;
+  }
+
+  /* PROFILE IMAGE */
+  .profile-photo {
+    width: 130px;
+    height: 130px;
+  }
+
+  /* TEXT */
+  .about-description,
+  #projects a,
+  #contact p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* FORM */
+  .contact-form {
+    padding: 1.1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  /* BACKGROUND ICONS (MUCHO MÁS SUTILES EN MOBILE) */
+  .skills-icon,
+  .projects-icon,
+  .contact-icon {
+    width: 140px;
+    opacity: 0.02;
+  }
+}
+
