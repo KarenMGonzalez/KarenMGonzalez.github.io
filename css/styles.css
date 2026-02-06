@@ -679,19 +679,23 @@ footer {
   }
 }
 
-/* Por defecto (PC) */
-.email-mobile {
-  display: none;
+/* Para la PC (default) */
+.contact-email { 
+  display: inline; 
 }
 
-/* En celular */
+.email-mobile { 
+  display: none; 
+}
+
+/* Celular */
 @media (max-width: 768px) {
-  .contact-email {
-    display: none;
+  .contact-email { 
+    display: none; 
   }
 
-  .email-mobile {
-    display: inline;
+  .email-mobile { 
+    display: inline; 
   }
 }
 
