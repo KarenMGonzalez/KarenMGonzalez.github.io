@@ -666,4 +666,17 @@ footer {
     display: none;
   }
 }
+/* Ajustamos un poco más el botón de los idiomas para la vista en celulares */
+@media (max-width: 640px) {
+  .languages {
+    margin-left: auto;
+    justify-content: flex-end;
+  }
+
+  .lang-button {
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+}
+
 
