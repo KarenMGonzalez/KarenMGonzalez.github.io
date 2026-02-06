@@ -658,3 +658,12 @@ footer {
   }
 }
 
+ /* Quitamos los icons para celular */
+   @media (max-width: 768px) {
+   .skills-icon,
+   .projects-icon,
+   .contact-icon {
+    display: none;
+  }
+}
+
