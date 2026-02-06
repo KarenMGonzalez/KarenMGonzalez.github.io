@@ -1,0 +1,40 @@
+{
+  "header": {
+    "about": "Acerca de mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "download-cv": "Descarga mi CV"
+  },
+  "about": {
+    "title": "Acerca de mí",
+    "description": "Apasionada por el desarrollo tecnológico y el análisis de datos. Busco mi primera experiencia laboral para aplicar mis habilidades, aprender y crecer profesionalmente."
+  },
+  "skills": {
+    "title": "Habilidades"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "status": "En construcción",
+    "link": "Ver proyectos en GitHub →"
+  },
+  "contact": {
+    "title": "Contacto",
+    "email": "Email:",
+    "phone": "Teléfono:",
+    "linkedin": "LinkedIn:",
+    "github": "GitHub:"
+  },
+  "form": {
+    "name": "Nombre",
+    "email": "Email",
+    "message": "Mensaje",
+    "submit": "Enviar",
+    "namePlaceholder": "Tu nombre",
+    "emailPlaceholder": "tu@email.com",
+    "messagePlaceholder": "Escribe tu mensaje..."
+  },
+  "footer": {
+    "copyright": "Copyright 2026 Karen Macarena González"
+  }
+}

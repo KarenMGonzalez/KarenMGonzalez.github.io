@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karen Macarena González</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="bg-overlay">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="grid-pattern"></div>
+    </div>
+    <header>
+        <h1>Karen Macarena González</h1>
+        <nav>
+            <ul>
+                <li><a href="#about" data-translate="header.about">Acerca de mí</a></li>
+                <li><a href="#skills" data-translate="header.skills">Habilidades</a></li>
+                <li><a href="#projects" data-translate="header.projects">Proyectos</a></li>
+                <li><a href="#contact" data-translate="header.contact">Contacto</a></li>
+                <li><a id="cv-download" href="assets/CV/CV_Karen_ES.pdf" download data-translate="header.download-cv">Descarga mi CV</a></li>
+            </ul>
+        </nav>
+
+        <div class="languages">
+     <button class="lang-button">ES</button>
+     <button class="lang-button">EN</button>  
+
+        </div>
+
+    </header>
+    <main>
+        <section id="about" class="animate-on-scroll">
+            <div class="section-content about-layout">
+                <img src="images/About%20me%20foto.jpg" alt="Karen Macarena González" class="profile-photo animate-on-scroll">
+                <div class="about-text">
+                    <h2 data-translate="about.title">Acerca de mí</h2>
+                    <p class="about-description" data-translate="about.description">Apasionada por el desarrollo tecnológico y el análisis de datos. 
+                        Busco mi primera experiencia laboral para aplicar mis habilidades, 
+                        aprender y crecer profesionalmente.</p>
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="animate-on-scroll">
+            <div class="section-content">
+                <img src="images/code.png" alt="Icono de habilidades web" class="skills-icon animate-on-scroll">
+                <h2 data-translate="skills.title">Habilidades</h2>
+                <ul class="skills-list">
+                    <li class="skill-item animate-on-scroll">HTML</li>
+                    <li class="skill-item animate-on-scroll">CSS</li>
+                    <li class="skill-item animate-on-scroll">JavaScript</li>
+                    <li class="skill-item animate-on-scroll">Java</li>
+                    <li class="skill-item animate-on-scroll">C#</li>
+                    <li class="skill-item animate-on-scroll">C++</li>
+                    <li class="skill-item animate-on-scroll">Node.js</li>
+                </ul>
+            </div>
+        </section>
+        <section id="projects" class="animate-on-scroll">
+            <div class="section-content">
+                <img src="images/projects icon.png" alt="Icono de proyectos" class="projects-icon animate-on-scroll">
+                <h2 data-translate="projects.title">Proyectos</h2>
+                <p data-translate="projects.status">En construcción</p>
+                <ul>
+                    <li><a href="https://github.com/karenmacarena/proyectos" target="_blank" rel="noopener" data-translate="projects.link">Ver proyectos en GitHub →</a></li>
+                </ul>
+            </div>
+        </section>
+        <section id="contact" class="animate-on-scroll">
+            <div class="section-content">
+             <img src="images/contacts.png" alt="Icono de contacto" class="contact-icon animate-on-scroll">   
+                <h2 data-translate="contact.title">Contacto</h2>
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <p><span data-translate="contact.email">Email:</span><a href="https://mail.google.com/mail/?view=cm&fs=1&to=karenmgonzalez2003@gmail.com" target="_blank" rel="noopener">karenmgonzalez2003@gmail.com</a></p>
+                        <p><span data-translate="contact.phone">Teléfono:</span><a href="https://wa.me/543425292885">(54) 3425292885</a></p>
+                        <p><span data-translate="contact.linkedin">LinkedIn:</span><a href="https://www.linkedin.com/in/karen-macarena-gonz%C3%A1lez/" target="_blank" rel="noopener">Karen Macarena González</a></p>
+                        <p><span data-translate="contact.github">GitHub:</span><a href="https://github.com/KarenMGonzalez" target="_blank" rel="noopener">Karu</a></p>
+                    </div>
+        
+                     <form id="contact-form" class="contact-form">
+
+  <!-- Asunto para Formspree -->
+                     <input type="hidden" name="_subject" value="Nuevo mensaje desde el formulario de contacto">
+   <!-- Honeypot anti-spam -->
+                      <input type="text" name="_gotcha" style="display:none">
+
+                      <label for="name" data-translate="form.name">Nombre</label>
+                      <input
+                       type="text"
+                       id="name"
+                       name="name"
+                       required
+                       placeholder="Tu nombre"
+                       data-translate-placeholder="form.namePlaceholder">
+
+                       <label for="email" data-translate="form.email">Email</label><input
+                       type="email"
+                       id="email"
+                       name="email"
+                       required
+                       placeholder="tu@email.com"
+                       data-translate-placeholder="form.emailPlaceholder">
+
+                       <label for="message" data-translate="form.message">Mensaje</label><textarea
+                       id="message" 
+                       name="message"
+                       rows="4"  
+                       required
+                       placeholder="Escribe tu mensaje..."
+                       data-translate-placeholder="form.messagePlaceholder"></textarea>
+
+                      <button type="submit" aria-label="Enviar formulario de contacto" data-translate="form.submit">Enviar</button>
+
+  <!-- Mensaje de estado -->
+  <p id="form-status" aria-live="polite"></p>
+
+</form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p data-translate="footer.copyright">Copyright 2026 Karen Macarena González</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
