@@ -102,6 +102,24 @@ loadLanguages();
 /************************************************
  * FORMULARIO DE CONTACTO (FORMSPREE)
  ************************************************/
+
+const formMessages = {
+  es: {
+    sending: 'Enviando...',
+    success: '¡Mensaje enviado correctamente! ✅',
+    error: 'No se pudo enviar el mensaje 😕',
+    connection: 'Error de conexión 😬',
+    send: 'Enviar'
+  },
+  en: {
+    sending: 'Sending...',
+    success: 'Message sent successfully! ✅',
+    error: 'Message could not be sent 😕',
+    connection: 'Connection error 😬',
+    send: 'Send'
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
@@ -114,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const button = form.querySelector('button');
     status.textContent = '';
     button.disabled = true;
-    button.textContent = 'Enviando...';
+    button.textContent = formMessages[currentLanguage].sending;
 
     const formData = new FormData(form);
 
@@ -126,19 +144,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (response.ok) {
-        status.textContent = '¡Mensaje enviado correctamente! ✅';
+        status.textContent = formMessages[currentLanguage].success;
         status.style.color = 'green';
         form.reset();
       } else {
-        status.textContent = 'No se pudo enviar el mensaje 😕';
+        status.textContent = formMessages[currentLanguage].error;
         status.style.color = 'red';
       }
     } catch {
-      status.textContent = 'Error de conexión 😬';
+      status.textContent = formMessages[currentLanguage].connection;
       status.style.color = 'red';
     } finally {
       button.disabled = false;
-      button.textContent = 'Enviar';
+      button.textContent = formMessages[currentLanguage].send;
     }
   });
 });
+

@@ -26,13 +26,14 @@
     "github": "GitHub:"
   },
   "form": {
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "submit": "Send",
-    "namePlaceholder": "Your name",
-    "emailPlaceholder": "Your@email.com",
-    "messagePlaceholder": "Type your message..."
+   "name": "Name",
+   "email": "Email",
+   "message": "Message",
+   "submit": "Send",
+   "namePlaceholder": "Your name",
+   "emailPlaceholder": "Your@email.com",
+   "messagePlaceholder": "Type your message..."
+
   },
   "footer": {
     "copyright": "Copyright 2026 Karen Macarena González"
