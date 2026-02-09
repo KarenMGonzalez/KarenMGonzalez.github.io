@@ -53,7 +53,7 @@ async function loadLanguages() {
     translations.en = await (await fetch('languages/en.json')).json();
     console.log('Idiomas cargados correctamente');
     
-    // Usar idioma guardado, o detectar del navegador
+// Usar idioma guardado, o detectar del navegador
     const savedLang = localStorage.getItem('preferredLanguage') || detectBrowserLanguage();
     changeLanguage(savedLang);
   } catch (error) {
@@ -65,10 +65,10 @@ async function loadLanguages() {
 function changeLanguage(lang) {
   currentLanguage = lang;
   
-  // Guardar preferencia del usuario
+// Guardar preferencia del usuario
   localStorage.setItem('preferredLanguage', lang);
 
-  // Textos
+// Textos
   document.querySelectorAll('[data-translate]').forEach(el => {
     const keys = el.dataset.translate.split('.');
     let value = translations[lang];
@@ -76,7 +76,7 @@ function changeLanguage(lang) {
     if (value) el.textContent = value;
   });
 
-  // Placeholders
+// Placeholders
   document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
     const keys = el.dataset.translatePlaceholder.split('.');
     let value = translations[lang];
@@ -84,10 +84,10 @@ function changeLanguage(lang) {
     if (value) el.setAttribute('placeholder', value);
   });
 
-  // Actualizar indicador visual de idioma activo
+// Actualizar indicador visual de idioma activo
   updateLanguageButtons(lang);
   
-  // Actualizar enlace del CV
+// Actualizar enlace del CV
   updateCVLink();
 }
 
