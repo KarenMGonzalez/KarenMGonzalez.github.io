@@ -1,25 +1,25 @@
-/* Portfolio - Karen Macarena González | Dark Purple Theme */
+/* Portfolio - Karen Macarena González */
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500&display=swap');
 
 :root {
-  /* Dark palette */
+  /* Paleta de tonos oscuros */
   --bg-dark: #0d0d14;
   --bg-card: #16161f;
   --bg-elevated: #1e1e2a;
   
-  /* Purple accents */
+  /* Tonos púrpura */
   --purple-main: #8b5cf6;
   --purple-light: #a78bfa;
   --purple-dim: #6d28d9;
   --purple-glow: rgba(139, 92, 246, 0.4);
   
-  /* Text */
+  /* Texto */
   --text-primary: #f5f5f7;
   --text-secondary: #a1a1aa;
   --text-muted: #71717a;
   
-  /* Borders & subtle */
+  /* Bordes sutiles */
   --border: rgba(139, 92, 246, 0.2);
   --transition: 0.2s ease;
   --transition-slow: 0.5s ease;
@@ -111,7 +111,7 @@ body {
   background-size: 50px 50px;
 }
 
-/* Nos aseguramos de que el contenido se sitúe por encima de la superposición.  */
+/* Nos aseguramos de que el contenido se sitúe por encima de la superposición  */
 header,
 main,
 footer {
@@ -154,6 +154,27 @@ header h1 {
     font-size: 1.25rem;
     color: #a1a1aa;
     font-family: 'Press Start 2P', cursive;
+    transition: color var(--transition), transform var(--transition);
+    position: relative;
+}
+
+.lang-button:hover {
+    color: var(--purple-light);
+    transform: translateY(-2px);
+}
+
+.lang-button.active {
+    color: var(--purple-light);
+}
+
+.lang-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--purple-main);
 }
 
 nav ul {
@@ -203,6 +224,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative; /* Importante para los iconos */
 }
 
 section .section-content {
@@ -232,7 +254,7 @@ section .section-content {
   padding-bottom: 5rem;
 }
 
-/* About - profile photo */
+/* Sobre Mí - Foto de perfil */
 .about-layout {
   display: flex;
   flex-direction: column;
@@ -255,47 +277,36 @@ section .section-content {
   animation: photo-glow 3s ease-in-out infinite alternate;
 }
 
-/* Icons */
+/* Icons - VERSIÓN RESPONSIVA MEJORADA */
 
-.skills-icon{
+.skills-icon,
+.projects-icon,
+.contact-icon {
   position: absolute;
-  opacity: 0.008; /* casi invisible */;
+  opacity: 0.008;
   fill: rgba(180, 140, 255, 0.05);
-  right: 200px;   /* lo empujamos fuera */
-  bottom: 150px;
-  width: 260px;
   z-index: -1;
   pointer-events: none;
   user-select: none;
-  
+  /* Tamaño adaptable usando vw (viewport width) */
+  width: clamp(150px, 20vw, 260px);
+  height: auto;
 }
 
-  .projects-icon { 
-  position: absolute;
-  opacity: 0.008; /* casi invisible */; 
-  fill: rgba(180, 140, 255, 0.05);
-  left: 150px;   /* lo empujamos fuera */
-  top: 100px;
-  width: 260px;
-  z-index: -1;
-  pointer-events: none;
-  user-select: none;
-
+.skills-icon {
+  right: 5%;
+  bottom: 15%;
 }
 
-.contact-icon{
-  position: absolute;
-  opacity: 0.008; /* casi invisible */;
-  fill: rgba(180, 140, 255, 0.05);
-  right: 150px;   /* lo empujamos fuera */
-  top: 100px;
-  width: 260px;
-  z-index: -1;
-  pointer-events: none;
-  user-select: none;
+.projects-icon { 
+  left: 5%;
+  top: 15%;
 }
 
-
+.contact-icon {
+  right: 5%;
+  top: 15%;
+}
 
 @keyframes photo-glow {
   from { box-shadow: 0 0 20px var(--purple-glow); }
@@ -328,6 +339,8 @@ section h2 {
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--purple-dim);
+  display: block;
+  width: 100%;
 }
 
 section p {
@@ -341,7 +354,7 @@ section p:last-of-type {
   font-size:20px;
 }
 
-/* Skills list */
+/* Listas de skills */
 #skills ul {
   list-style: none;
   display: flex;
@@ -365,7 +378,7 @@ section p:last-of-type {
   box-shadow: 0 4px 15px var(--purple-glow);
 }
 
-/* Projects */
+/* Proyectos */
 #projects ul {
   list-style: none;
   
@@ -391,7 +404,7 @@ section p:last-of-type {
   
 }
 
-/* Contact */
+/* Contacto */
 #contact p {
   display: flex;
   align-items: center;
@@ -414,7 +427,7 @@ section p:last-of-type {
 
 }
 
-/* Contact form */
+/* Formulario de contacto */
 .contact-layout {
   display: flex;
   flex-direction: column;
@@ -481,7 +494,7 @@ section p:last-of-type {
   transform: translateY(-1px);
 }
 
-/* Scroll animations */
+/* Animaciones de scroll */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
@@ -551,7 +564,7 @@ footer {
   }
   
   #contact .section-content {
-    max-width: 900px;
+    max-width: 720px;
   }
   
   .contact-layout {
@@ -625,13 +638,13 @@ footer {
     font-size: 0.75rem;
   }
 
-  /* PROFILE IMAGE */
+  /* FOTO DE PERFIL */
   .profile-photo {
     width: 130px;
     height: 130px;
   }
 
-  /* TEXT */
+  /* TEXTO */
   .about-description,
   #projects a,
   #contact p {
@@ -639,7 +652,7 @@ footer {
     line-height: 1.6;
   }
 
-  /* FORM */
+  /* FORMULARIO */
   .contact-form {
     padding: 1.1rem;
   }
@@ -648,24 +661,17 @@ footer {
   .contact-form textarea {
     font-size: 0.9rem;
   }
+}
 
-  /* BACKGROUND ICONS (MUCHO MÁS SUTILES EN MOBILE) */
+/* Ocultamos los iconos en tablets y móviles para mejor rendimiento */
+@media (max-width: 1024px) {
   .skills-icon,
   .projects-icon,
   .contact-icon {
-    width: 140px;
-    opacity: 0.02;
-  }
-}
-
- /* Quitamos los icons para celular */
-   @media (max-width: 768px) {
-   .skills-icon,
-   .projects-icon,
-   .contact-icon {
     display: none;
   }
 }
+
 /* Ajustamos un poco más el botón de los idiomas para la vista en celulares */
 @media (max-width: 640px) {
   .languages {
@@ -698,6 +704,3 @@ footer {
     display: inline; 
   }
 }
-
-
-

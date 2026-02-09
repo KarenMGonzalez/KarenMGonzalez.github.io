@@ -1,6 +1,4 @@
-/************************************************
- * DESPLAZAMIENTO SUAVE PARA EL NAV
- ************************************************/
+// *** DESPLAZAMIENTO SUAVE PARA EL NAV *** //
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -18,9 +16,8 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
   });
 });
 
-/************************************************
- * ANIMACIONES AL HACER SCROLL
- ************************************************/
+
+// *** ANIMACIONES AL HACER SCROLL *** //
 const observerOptions = {
   threshold: 0.2,
   rootMargin: '0px 0px -80px 0px'
@@ -38,19 +35,27 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-/************************************************
- * IDIOMAS
- ************************************************/
+
+// *** IDIOMAS *** //
 let currentLanguage = 'es'; // idioma por defecto
 let translations = {};
+
+// Detectar idioma del navegador
+function detectBrowserLanguage() {
+  const browserLang = navigator.language || navigator.userLanguage;
+  return browserLang.startsWith('es') ? 'es' : 'en';
+}
 
 // Cargar idiomas
 async function loadLanguages() {
   try {
     translations.es = await (await fetch('languages/es.json')).json();
     translations.en = await (await fetch('languages/en.json')).json();
-    console.log('Idiomas cargados');
-    changeLanguage(currentLanguage); // aplicar idioma inicial
+    console.log('Idiomas cargados correctamente');
+    
+    // Usar idioma guardado, o detectar del navegador
+    const savedLang = localStorage.getItem('preferredLanguage') || detectBrowserLanguage();
+    changeLanguage(savedLang);
   } catch (error) {
     console.error('Error al cargar idiomas:', error);
   }
@@ -59,24 +64,43 @@ async function loadLanguages() {
 // Cambiar idioma
 function changeLanguage(lang) {
   currentLanguage = lang;
+  
+// Guardar preferencia del usuario
+  localStorage.setItem('preferredLanguage', lang);
 
-  // Textos
+// Textos
   document.querySelectorAll('[data-translate]').forEach(el => {
     const keys = el.dataset.translate.split('.');
     let value = translations[lang];
-    keys.forEach(k => value = value[k]);
-    el.textContent = value;
+    keys.forEach(k => value = value?.[k]);
+    if (value) el.textContent = value;
   });
 
-  // Placeholders
+// Placeholders
   document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
     const keys = el.dataset.translatePlaceholder.split('.');
     let value = translations[lang];
-    keys.forEach(k => value = value[k]);
-    el.setAttribute('placeholder', value);
+    keys.forEach(k => value = value?.[k]);
+    if (value) el.setAttribute('placeholder', value);
   });
 
+// Actualizar indicador visual de idioma activo
+  updateLanguageButtons(lang);
+  
+// Actualizar enlace del CV
   updateCVLink();
+}
+
+// Actualizar botones de idioma (indicador visual)
+function updateLanguageButtons(activeLang) {
+  document.querySelectorAll('.lang-button').forEach((button, index) => {
+    const buttonLang = index === 0 ? 'es' : 'en';
+    if (buttonLang === activeLang) {
+      button.classList.add('active');
+    } else {
+      button.classList.remove('active');
+    }
+  });
 }
 
 // Botones de idioma
@@ -99,23 +123,20 @@ function updateCVLink() {
 // Cargar idiomas al iniciar
 loadLanguages();
 
-/************************************************
- * FORMULARIO DE CONTACTO (FORMSPREE)
- ************************************************/
-
+// *** FORMULARIO DE CONTACTO (FORMSPREE) *** //
 const formMessages = {
   es: {
     sending: 'Enviando...',
     success: '¡Mensaje enviado correctamente! ✅',
-    error: 'No se pudo enviar el mensaje 😕',
-    connection: 'Error de conexión 😬',
+    error: 'No se pudo enviar el mensaje',
+    connection: 'Error de conexión',
     send: 'Enviar'
   },
   en: {
     sending: 'Sending...',
     success: 'Message sent successfully! ✅',
-    error: 'Message could not be sent 😕',
-    connection: 'Connection error 😬',
+    error: 'Message could not be sent',
+    connection: 'Connection error',
     send: 'Send'
   }
 };
@@ -160,4 +181,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
