@@ -379,29 +379,50 @@ section p:last-of-type {
 }
 
 /* Proyectos */
-#projects ul {
+.project-list {
   list-style: none;
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
-#projects li {
-  margin-top: 0.5rem;
-  
+.project-item {
+  display: inline-block;
+  background: var(--bg-elevated);
+  color: var(--purple-light);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.65rem;
+  font-weight: 500;
+  font-family: 'Press Start 2P', cursive;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: opacity 0.4s ease, transform 0.4s ease, box-shadow var(--transition);
 }
 
-#projects a {
+.project-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--purple-glow);
+  color: var(--purple-light);
+}
+
+#projects ul:last-child {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+#projects ul:last-child a {
   color: var(--purple-light);
   text-decoration: none;
-  font-weight: 500;
-  transition: color var(--transition);
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 20px;    
+  font-size: 20px;
+  transition: color var(--transition);
 }
 
-#projects a:hover {
+#projects ul:last-child a:hover {
   color: var(--purple-main);
   text-decoration: underline;
-  
 }
 
 /* Contacto */

@@ -15,8 +15,8 @@
   },
   "projects": {
     "title": "Projects",
-    "status": "Under construction",
-    "link": "See projects on GitHub →"
+    "currencyConverter": "Currency Converter",
+    "link": "See more projects on GitHub →"
   },
   "contact": {
     "title": "Contact",

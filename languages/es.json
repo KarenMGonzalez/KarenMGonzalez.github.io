@@ -15,8 +15,8 @@
   },
   "projects": {
     "title": "Proyectos",
-    "status": "En construcción",
-    "link": "Ver proyectos en GitHub →"
+    "currencyConverter": "Conversor de Monedas",
+    "link": "Ver más proyectos en GitHub →"
   },
   "contact": {
     "title": "Contacto",
